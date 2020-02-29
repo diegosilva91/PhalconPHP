@@ -10,8 +10,8 @@ $router = new Router();
 $router->add(
     'example',
     [
-        'controller' => 'indexController',
-        'action'     => 'list',
+        'controller' => 'list',
+        'action'     => 'show',
     ]
 );
 
