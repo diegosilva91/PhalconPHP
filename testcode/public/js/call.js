@@ -2,8 +2,8 @@ $( document ).ready(function() {
     $("#Greetings").html("THE RICK AND MORTY API");
     // HEY, DID YOU EVER WANT TO HOLD A TERRY FOLD?
     // I GOT ONE RIGHT HERE, GRAB MY TERRY FLAP
-    var $content=$('<div id="Cards" class="row ">');
-    getUrl('/list',(error,response)=>{
+    var $content=$('<div id="Cards" class="">');
+    getUrl('/episode',(error,response)=>{
         // console.log(JSON.parse(data));
         // loadCards(data,defaultLibrary);
         data=JSON.parse(response)
@@ -42,14 +42,14 @@ function getUrl(URL,callback){
 
     $.fn.loadLibrary=function(episodes){
 
-        $("#Cards").append('<div id="resultsDiv" class="d-flex flex-wrap col-12">');
+        $("#Cards").append('<div id="resultsDiv" class="row">');
         return  this .fadeIn ("slow",function () {
             $.each( episodes.results,function(i,element) {
                 // console.log(i);
-                $("#resultsDiv").append($(`<div id="div${i}" class="card col-xl-3 col-lg-4 col-md-6 col-xm-6">`));
+                $("#resultsDiv").append($(`<div id="div${i}" class="card blue-grey darken-1 col s4">`));
                 $('#div' + i).append(
-                        $(`<div class="card-img-top" id="img${i}"></div>`),
-                        $(`<div class="card-body" id="divContent${i}">`),
+                        $(`<div class="card-image waves-effect waves-block waves-light" id="img${i}"></div>`),
+                        $(`<div class="card-content white-text" id="divContent${i}">`),
                 );
                 $('#divContent'+i).append(
                     $(`<h5>${element.name}</h4>`),
@@ -62,7 +62,7 @@ function getUrl(URL,callback){
     }
     $.fn.loadImages=function(characters,i){
         $('#img'+i).append(
-            $(`<img class="card-img-top" src="${characters.image}">`)
+            $(`<img class="g-top" src="${characters.image}">`)
         );
 
     }
