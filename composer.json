@@ -4,5 +4,8 @@
         "phalcon/incubator": "^2.0",
         "guzzlehttp/guzzle": "^6.5",
         "guzzlehttp/psr7": "^1.6"
+    },
+    "require-dev": {
+        "phalcon/migrations": "^1.1"
     }
 }
