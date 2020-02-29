@@ -1,0 +1,81 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["characters/index", "Go Back"]); ?></li>
+            <li class="next"><?php echo $this->tag->linkTo(["characters/new", "Create "]); ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>Search result</h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Species</th>
+            <th>Type</th>
+            <th>Gender</th>
+            <th>Origin</th>
+            <th>Location</th>
+            <th>Image Of Url</th>
+            <th>Url</th>
+            <th>Created</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($page->items as $character): ?>
+            <tr>
+                <td><?php echo $character->id ?></td>
+            <td><?php echo $character->name ?></td>
+            <td><?php echo $character->status ?></td>
+            <td><?php echo $character->species ?></td>
+            <td><?php echo $character->type ?></td>
+            <td><?php echo $character->gender ?></td>
+            <td><?php echo $character->origin ?></td>
+            <td><?php echo $character->location ?></td>
+            <td><?php echo $character->image_url ?></td>
+            <td><?php echo $character->url ?></td>
+            <td><?php echo $character->created ?></td>
+
+                <td><?php echo $this->tag->linkTo(["characters/edit/" . $character->getId(), "Edit"]); ?></td>
+                <td><?php echo $this->tag->linkTo(["characters/delete/" . $character->getId(), "Delete"]); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-1">
+        <p class="pagination" style="line-height: 1.42857;padding: 6px 12px;">
+            <?php echo $page->current, "/", $page->total_pages ?>
+        </p>
+    </div>
+    <div class="col-sm-11">
+        <nav>
+            <ul class="pagination">
+                <li><?php echo $this->tag->linkTo(["characters/search", "First", 'class' => 'page-link']) ?></li>
+                <li><?php echo $this->tag->linkTo(["characters/search?page=" . $page->before, "Previous", 'class' => 'page-link']) ?></li>
+                <li><?php echo $this->tag->linkTo(["characters/search?page=" . $page->next, "Next", 'class' => 'page-link']) ?></li>
+                <li><?php echo $this->tag->linkTo(["characters/search?page=" . $page->last, "Last", 'class' => 'page-link']) ?></li>
+            </ul>
+        </nav>
+    </div>
+</div>
