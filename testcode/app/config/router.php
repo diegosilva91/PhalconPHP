@@ -8,10 +8,10 @@ use Phalcon\Mvc\Router;
 $router = new Router();
 
 $router->add(
-    'example',
+    '/character/showID/{id}',
     [
-        'controller' => 'list',
-        'action'     => 'show',
+        'controller' => 'character',
+        'action'     => 'showID',
     ]
 );
 
