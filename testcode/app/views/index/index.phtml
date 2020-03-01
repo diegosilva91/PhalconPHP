@@ -1,9 +1,36 @@
-<div class="page-header">
-    <h1 id="Greetings">Congratulations!</h1>
-</div>
 
-<p>You're now flying with Phalcon. Great things are about to happen!</p>
+    <div class="row">
+        <div class="col s12">
+            <form class="col s12" method="post" action="/episode/">
+                <div class="row" >
+                    <input id="inpSch" name="inputSearch" class="col s12 m6 l6" type="text" placeholder="Write your word to find" required>
+                    <button id="btnSch" name="inputPost" class="btn col s12 m6 l6">Search</button>
+                </div>
+                <div class="row">
+                    <h4 class="col s12 m3 l3 pointer" value="musicArtist"><i class="medium material-icons"></i>d</h4>
+                    <h4 class="col s12 m3 l3 pointer" value="album"><i class="medium material-icons"></i>d</h4>
+                    <h4 class="col s12 m3 l3 pointer" value="musicTrack"><i class="medium material-icons"></i>d</h4>
+                    <h4 class="col s12 m3 l3 pointer" value="musicVideo"><i class="medium material-icons"></i>d</h4>
+                </div>
+
+                <div class="row" >
+                    <input id="inpEntity" list="types" placeholder="Select a typ" class="col s12 m3 l3">
+                    <datalist id="types">
+                        <option value="musicArtist">Artist</option>
+                        <option value="musicTrack">Song</option>
+                        <option value="album">Album</option>
+                        <option value="musicVideo">Video</option>
+                    </datalist>
+                    <input id="inpCountrie" list="countries" placeholder="Select a countrie" class="col s12 m3 l3">
+                    <datalist id="countries">
+                        <!-- Here will the countries data -->
+                    </datalist>
+                    <h6 class="col s12 m3 l3 center-align"><label><input id="inpExplicit" type="checkbox" value="Yes"/><span>Explicit Content</span></label></h6>
+                    <p class="col s12 m3 l3 range-field"><input id="inpLimit" type="range" min="1" max="200"></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
 <div id="Cards" class="row"></div>
-<?php //echo $response->getBody();?>
-<?php //echo($response);?>
-<p>This page is located at <code>views/index/index.phtml</code></p>
+
