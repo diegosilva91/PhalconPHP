@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
+use Phalcon\Mvc\Router;
 
 
 
@@ -9,8 +9,7 @@ declare(strict_types=1);
 class IndexController extends ControllerBase
 {
 
-    public function indexAction()
-    {
+    public function indexAction(){
 
     }
 
