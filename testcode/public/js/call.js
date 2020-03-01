@@ -10,11 +10,14 @@ $( document ).ready(function() {
         $content.loadLibrary(data);
         $.each( data.results,function(i,element) {
             $.each(element.characters,function(i,element) {
-                getUrl(element,(error,response)=>{
-                    // console.log(response);
-                    // $content.loadImages(response.results,i); PHP
-                    $content.loadImages(response,i);
-                });
+                numberEpisode=element.match(/(\d+)/)[0];
+                URL="/character/"+numberEpisode;
+                console.log(URL);
+            //     getUrl(URL(error,response)=>{
+            // //         // console.log(response);
+            // //         // $content.loadImages(response.results,i); PHP
+            // //         $content.loadImages(response,i);
+            //     });
             });
         });
     });
