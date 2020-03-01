@@ -42,13 +42,6 @@ try {
 
     echo $application->handle($_SERVER['REQUEST_URI'])->getContent();
 
-//    $loader = new Phalcon\Loader();
-//
-//    $loader->registerNamespaces(array(
-//        'Phalcon' => APP_PATH . 'app/library/'
-//    ));
-//
-//    $loader->register();
 
 } catch (\Exception $e) {
     echo $e->getMessage() . '<br>';
