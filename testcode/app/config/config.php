@@ -27,6 +27,6 @@ return new \Phalcon\Config([
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
         'apiDir'     => APP_PATH . '/api/',
-        'baseUri'        => '/',
+        'baseUri'        => 'http://localhost:8000/',
     ]
 ]);

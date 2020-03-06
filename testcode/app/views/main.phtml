@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Phalcon PHP Framework</title>
+    <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
+</head>
+<body>
+<nav class="blue lighten-2">
+    <div class="nav-wrapper">
+        <a href="<?php echo $this->url->getBaseUri();?>" class="brand-logo">
+            <img src="<?php echo $this->url->get('img/favicon.ico')?>">
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li id="episodeButton" class="<?php if($activeItem=='episode') echo "active"; ?>">
+                <a href="/index/episode">
+                    Episodes
+                </a>
+            </li>
+            <li id="characterButton" class="<?php if($activeItem=='character') echo "active"; ?>">
+                <a href="/index/character">
+                    Characters
+                </a>
+            </li>
+            <li id="locationButton" class="<?php if($activeItem=='location') echo "active"; ?>">
+                <a href="/index/location">
+                    Location
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="col s12 ">
+    <h1 id="Greetings" class="center-align">Congratulations!</h1>
+</div>
+<div class="container">
+    <?php echo $this->getContent();
+    //            var_dump($this);
+    ?>
+</div>
+<!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
+<script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<!--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+<script src="<?php echo $this->url->get('js/call.js')?>"></script>
+</body>
+</html>

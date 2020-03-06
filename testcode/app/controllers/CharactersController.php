@@ -1,11 +1,10 @@
 <?php
 declare(strict_types=1);
 
- 
 
 use Phalcon\Mvc\Model\Criteria;
 use Phalcon\Paginator\Adapter\Model as Paginator;
-
+use App\Models\Characters;
 
 class CharactersController extends ControllerBase
 {
@@ -40,7 +39,7 @@ class CharactersController extends ControllerBase
 
         $paginator = new Paginator([
             'data' => $characters,
-            'limit'=> 10,
+            'limit' => 10,
             'page' => $numberPage,
         ]);
 
@@ -88,7 +87,7 @@ class CharactersController extends ControllerBase
             $this->tag->setDefault("image_url", $character->image_url);
             $this->tag->setDefault("url", $character->url);
             $this->tag->setDefault("created", $character->created);
-            
+
         }
     }
 
@@ -107,17 +106,17 @@ class CharactersController extends ControllerBase
         }
 
         $character = new Characters();
-        $character->name = $this->request->getPost("name", "int");
-        $character->status = $this->request->getPost("status", "int");
-        $character->species = $this->request->getPost("species", "int");
-        $character->type = $this->request->getPost("type", "int");
-        $character->gender = $this->request->getPost("gender", "int");
-        $character->origin = $this->request->getPost("origin", "int");
-        $character->location = $this->request->getPost("location", "int");
-        $character->imageUrl = $this->request->getPost("image_url", "int");
-        $character->url = $this->request->getPost("url", "int");
-        $character->created = $this->request->getPost("created", "int");
-        
+        $character->setName($this->request->getPost("name", "int"));
+        $character->setStatus($this->request->getPost("status", "string"));
+        $character->setSpecies($this->request->getPost("species", "int"));
+        $character->setType($this->request->getPost("type", "int"));
+        $character->setGender($this->request->getPost("gender", "int"));
+        $character->setOrigin($this->request->getPost("origin", "int"));
+        $character->setLocation($this->request->getPost("location", "int"));
+        $character->setImageUrl($this->request->getPost("image_url", "int"));
+        $character->setUrl($this->request->getPost("url", "int"));
+        $character->setCreated($this->request->getPost("created", "int"));
+
 
         if (!$character->save()) {
             foreach ($character->getMessages() as $message) {
@@ -180,7 +179,7 @@ class CharactersController extends ControllerBase
         $character->imageUrl = $this->request->getPost("image_url", "int");
         $character->url = $this->request->getPost("url", "int");
         $character->created = $this->request->getPost("created", "int");
-        
+
 
         if (!$character->save()) {
 

@@ -1,2 +1,8 @@
 Sun 1 00:02:15 Redmi php: [error] Uncaught exception: syntax error, unexpected ';', expecting '{' in C:\Users\diegosilva91\Documents\Programacion\Phalcon\testcode\app\models\Characters.php on line 3
 Sun 1 00:02:32 Redmi php: [error] Uncaught exception: syntax error, unexpected ';', expecting '{' in C:\Users\diegosilva91\Documents\Programacion\Phalcon\testcode\app\models\Characters.php on line 3
+Thu 5 18:48:53 Redmi php: [error] Uncaught exception: Class '\App\Episodes\Characters' not found in C:\Users\diegosilva91\AppData\Roaming\Composer\vendor\phalcon\devtools\src\Builder\Component\Scaffold.php on line 179
+Thu 5 18:49:13 Redmi php: [error] Uncaught exception: Class '\App\Episodes\Characters' not found in C:\Users\diegosilva91\AppData\Roaming\Composer\vendor\phalcon\devtools\src\Builder\Component\Scaffold.php on line 179
+Fri 6 03:34:49 Redmi php: [error] Uncaught exception: Class 'App\Models\Model' not found in C:\Users\diegosilva91\Documents\Programacion\Phalcon\testcode\app\models\Characters.php on line 6
+Fri 6 03:34:52 Redmi php: [error] Uncaught exception: Class 'App\Models\Model' not found in C:\Users\diegosilva91\Documents\Programacion\Phalcon\testcode\app\models\Characters.php on line 6
+Fri 6 03:35:26 Redmi php: [error] Uncaught exception: Class 'App\Models\Model' not found in C:\Users\diegosilva91\Documents\Programacion\Phalcon\testcode\app\models\Characters.php on line 6
+Fri 6 03:35:41 Redmi php: [error] Uncaught exception: Class 'App\Models\Model' not found in C:\Users\diegosilva91\Documents\Programacion\Phalcon\testcode\app\models\Characters.php on line 6

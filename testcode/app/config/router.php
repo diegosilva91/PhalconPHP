@@ -15,4 +15,12 @@ $router->add(
     ]
 );
 
+$router->add(
+    '/episode/search/{name}.{type:[a-z]+}',
+    [
+        'controller' => 'episode',
+        'action'     => 'search',
+    ]
+);
+
 $router->handle($_SERVER['REQUEST_URI']);

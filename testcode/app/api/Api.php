@@ -71,22 +71,65 @@ class Api{
     }
 
     /**
+     * Convert content to object
      *
-     *
+     * @param
+     * @return
      */
-    private function convert(){
+    private function convert($word,$where){
+        $array=[];
+        $key=[];
 //        var_dump(json_decode($this->response));//FOR DATABASE
-        $response=json_decode($this->response)->results;
+        $response=json_decode($this->allPage())->results;
 //        var_dump($response);
-        foreach ($response as $item){
-//            var_dump($item);
-//            $item=>episode;
-//            var_dump($item->characters);
-//            echo "<br>character".$item->id."<br>";
-//            foreach ($item->characters as $characters){
-//                echo $characters."\n";
-//            }
-        }
+        return $response;
     }
 
+    /**
+     * Return data to search
+     *
+     * @param $word
+     * @param $where
+     * @return mixed $data
+     */
+    public function search($word,$where){
+        $data=$this->convert($word,$where);
+        $i =0;
+        $j=0;
+        $column=[];
+        $column[0]="";
+        $datas=[];
+        foreach ($data as $item){
+//            var_dump($item);
+            $array=(array)$item;
+//            var_dump($array);
+            foreach ($array as $key =>$value){
+//                echo $key.'='.$value.'<br>';
+//                var_dump(key($array));
+                if(key($array)==$where){
+                    $column[$i]=array_push($column,$value);
+//                    $column[0].=$value.',';
+                    $column[$i+1]=$value;
+//                    echo "$word= $value";
+//                    if(substr(strtolower($array[$i]),0,strlen($word))===$word){
+////                            $column[$i]=substr($data[$i],0,strlen($name)).substr($data[$i],strlen($name)).",";
+//                        $column[$j]=$array;
+//                        $j++;
+//                    }
+//                    if(substr(strtolower($value),0,strlen($word))==$word){
+                    if(strpos(strtolower( $value), strtolower($word)) !== false){
+//                        $column[0].=$value.', ';
+//                        var_dump($value);
+//                        var_dump($i);
+                         $datas[]=array_push($datas,$array);
+//                        var_dump($array);
+                    }
+                    $j++;
+                }
+                next($array);
+            }
+            $i++;
+        }
+        return $datas;
+    }
 }

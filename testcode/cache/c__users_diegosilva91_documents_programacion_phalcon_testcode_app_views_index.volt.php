@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,17 +8,14 @@
         <title>Phalcon PHP Framework</title>
 <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
     </head>
     <body>
-        <div class="col s12 ">
-            <h1 id="Greetings" class="center-align">RICK AND MORTY</h1>
-            <h4 class="center-align">HEY, DID YOU EVER WANT TO HOLD A TERRY FOLD?</h4>
-            <h5 class="center-align">I GOT ONE RIGHT HERE, GRAB MY TERRY FLAP</h5>
-        </div>
         <div class="container">
-            <?php echo $this->getContent(); ?>
+            <?php
+            var_dump($this->view);
+            echo $this->getContent(); ?>
+
         </div>
         <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
         <script
@@ -27,5 +24,6 @@
                 crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <!--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+        <script src="<?php echo $this->url->get('js/call.js')?>"></script>
     </body>
 </html>

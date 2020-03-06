@@ -1,0 +1,32 @@
+<?php //echo $this->tag->form("");?>
+<div class="row">
+    <div class="col s12">
+        <!--            <form class="col s12" method="post" action="--><?php //echo $this->url->getBaseUri().'episode/search/';?><!--">-->
+        <div class="row" >
+            <?php
+            echo $form->render('seachInput',['placeholder' => 'Write your word to find']);
+            ?>
+            <button id="btnSch" name="inputPost" class="btn col s12 m6 l6">Search</button>
+        </div>
+        <div class="row">
+            <h5 class="col s12 m3 l3 pointer" value="musicArtist">Filter by:</h5>
+<!--            <h4 class="col s12 m3 l3 pointer" value="album"><i class="medium material-icons"></i>d</h4>-->
+<!--            <h4 class="col s12 m3 l3 pointer" value="musicTrack"><i class="medium material-icons"></i>d</h4>-->
+<!--            <h4 class="col s12 m3 l3 pointer" value="musicVideo"><i class="medium material-icons"></i>d</h4>-->
+        </div>
+        <div class="row" >
+            <h6 class="col s12 m3 l3 center-align"><label>
+                    <input id="inpList" type="checkbox" value="Yes"/><span><i class="tiny material-icons">featured_play_list</i>Show in list</span></label>
+            </h6>
+<!--            <input id="inpEntity" list="types" placeholder="Select a typ" class="col s12 m3 l3">-->
+<!--            <datalist id="types">-->
+<!--                <option value=""></option>-->
+<!--            </datalist>-->
+<!--            <p class="col s12 m3 l3 range-field"><input id="inpLimit" type="range" min="1" max="200"></p>-->
+        </div>
+        <!--            </form>-->
+    </div>
+</div>
+
+<div id="Cards" class="row"></div>
+

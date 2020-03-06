@@ -1,6 +1,7 @@
 <?php
 
-
+namespace App\Models;
+use Phalcon\Mvc\Model\Criteria;
 
 class Episodes extends \Phalcon\Mvc\Model
 {
@@ -215,7 +216,7 @@ class Episodes extends \Phalcon\Mvc\Model
     {
         $this->setSchema("db_rick_morty");
         $this->setSource("episodes");
-        $this->belongsTo('id_characters', '\Characters', 'id', ['alias' => 'Characters']);
+        $this->belongsTo('id_characters', 'App\Models\Characters', 'id', ['alias' => 'Characters']);
     }
 
     /**

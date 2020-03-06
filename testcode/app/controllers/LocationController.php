@@ -2,32 +2,14 @@
 declare(strict_types=1);
 
 use Phalcon\Mvc\Router;
-class CharacterController extends ControllerBase
-{
-    /**
-     * @Route("/character", name="character_list")
-     */
+use Phalcon\Mvc\Model\Criteria;
+class LocationController extends ControllerBase{
     public function indexAction(){
-
-        $api=new Api('https://rickandmortyapi.com/api/','character');
-//        echo $api->getAll();
-//        var_dump($api->AllPage());
+        $this->view->setMainView("api");
+        $this->view->disable();
+        $api=new Api('https://rickandmortyapi.com/api/','location');
         echo $api->allPage();
-        $this->view->setMainView("api");
-        $this->view->disable();
-//        echo $api->getPage(2);
-    }
-
-    /**
-     *
-     * @Route("/character/showID/{id}", name="character_id")
-     * @param $id
-     */
-    public function showIDAction($id){
-        $api=new Api('https://rickandmortyapi.com/api/','character');
-        echo $api->getPage($id);
-        $this->view->setMainView("api");
-        $this->view->disable();
+//        $this->view->setVar('response', $response);
     }
     /**
      *
@@ -53,6 +35,4 @@ class CharacterController extends ControllerBase
         $response["results"]=$new_data;
         echo json_encode($response);
     }
-
 }
-

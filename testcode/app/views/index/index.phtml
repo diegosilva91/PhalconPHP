@@ -1,36 +1,38 @@
-
-    <div class="row">
-        <div class="col s12">
-            <form class="col s12" method="post" action="/episode/">
-                <div class="row" >
-                    <input id="inpSch" name="inputSearch" class="col s12 m6 l6" type="text" placeholder="Write your word to find" required>
-                    <button id="btnSch" name="inputPost" class="btn col s12 m6 l6">Search</button>
-                </div>
-                <div class="row">
-                    <h4 class="col s12 m3 l3 pointer" value="musicArtist"><i class="medium material-icons"></i>d</h4>
-                    <h4 class="col s12 m3 l3 pointer" value="album"><i class="medium material-icons"></i>d</h4>
-                    <h4 class="col s12 m3 l3 pointer" value="musicTrack"><i class="medium material-icons"></i>d</h4>
-                    <h4 class="col s12 m3 l3 pointer" value="musicVideo"><i class="medium material-icons"></i>d</h4>
-                </div>
-
-                <div class="row" >
-                    <input id="inpEntity" list="types" placeholder="Select a typ" class="col s12 m3 l3">
-                    <datalist id="types">
-                        <option value="musicArtist">Artist</option>
-                        <option value="musicTrack">Song</option>
-                        <option value="album">Album</option>
-                        <option value="musicVideo">Video</option>
-                    </datalist>
-                    <input id="inpCountrie" list="countries" placeholder="Select a countrie" class="col s12 m3 l3">
-                    <datalist id="countries">
-                        <!-- Here will the countries data -->
-                    </datalist>
-                    <h6 class="col s12 m3 l3 center-align"><label><input id="inpExplicit" type="checkbox" value="Yes"/><span>Explicit Content</span></label></h6>
-                    <p class="col s12 m3 l3 range-field"><input id="inpLimit" type="range" min="1" max="200"></p>
-                </div>
-
-            </form>
+<div class="row">
+    <div class="col s4 m4">
+        <div class="card indigo darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Episodes<i class="material-icons right">playlist_play</i></span>
+                <p>This list is obtain from a request to the API. But you can add your episodes by yourself</p>
+            </div>
+            <div class="card-action">
+                <a href="index/episode">Thrid API</a>
+                <a href="/episodes">Own API</a>
+            </div>
         </div>
     </div>
-<div id="Cards" class="row"></div>
-
+    <div class="col s4 m4">
+        <div class="card indigo darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Locations<i class="material-icons right">location_searching</i></span>
+                <p>This list is obtain from a request to the API. But you can add your locations by yourself</p>
+            </div>
+            <div class="card-action">
+                <a href="index/location">Thrid API</a>
+                <a href="/episodes">Own API</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s4 m4">
+        <div class="card indigo darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Characters<i class="material-icons right">people</i></span>
+                <p>This list is obtain from a request to the API. Are you tired of the same characters? Build your own now!</p>
+            </div>
+            <div class="card-action">
+                <a href="index/character">Thrid API</a>
+                <a href="/characters">Own API</a>
+            </div>
+        </div>
+    </div>
+</div>

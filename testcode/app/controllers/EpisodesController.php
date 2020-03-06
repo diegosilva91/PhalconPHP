@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 use Phalcon\Mvc\Model\Criteria;
 use Phalcon\Paginator\Adapter\Model as Paginator;
-
+use App\Models\Episodes;
 
 class EpisodesController extends ControllerBase
 {
@@ -23,7 +23,7 @@ class EpisodesController extends ControllerBase
     public function searchAction()
     {
         $numberPage = $this->request->getQuery('page', 'int', 1);
-        $parameters = Criteria::fromInput($this->di, 'Episodes', $_GET)->getParams();
+        $parameters = Criteria::fromInput($this->di, '\App\Models\Episodes', $_GET)->getParams();
         $parameters['order'] = "id";
 
         $episodes = Episodes::find($parameters);
@@ -43,7 +43,7 @@ class EpisodesController extends ControllerBase
             'limit'=> 10,
             'page' => $numberPage,
         ]);
-
+//var_dump($episodes);
         $this->view->page = $paginator->getPaginate();
     }
 
@@ -75,15 +75,15 @@ class EpisodesController extends ControllerBase
                 return;
             }
 
-            $this->view->id = $episode->id;
+            $this->view->id = $episode->getId();
 
-            $this->tag->setDefault("id", $episode->id);
-            $this->tag->setDefault("name", $episode->name);
-            $this->tag->setDefault("air_date", $episode->air_date);
-            $this->tag->setDefault("episode", $episode->episode);
-            $this->tag->setDefault("id_characters", $episode->id_characters);
-            $this->tag->setDefault("url", $episode->url);
-            $this->tag->setDefault("created", $episode->created);
+            $this->tag->setDefault("id", $episode->getId());
+            $this->tag->setDefault("name", $episode->getName());
+            $this->tag->setDefault("air_date", $episode->getAirDate());
+            $this->tag->setDefault("episode", $episode->getEpisode());
+            $this->tag->setDefault("id_characters", $episode->getIdCharacters());
+            $this->tag->setDefault("url", $episode->getUrl());
+            $this->tag->setDefault("created", $episode->getCreated());
             
         }
     }
@@ -103,12 +103,12 @@ class EpisodesController extends ControllerBase
         }
 
         $episode = new Episodes();
-        $episode->name = $this->request->getPost("name", "int");
-        $episode->airDate = $this->request->getPost("air_date", "int");
-        $episode->episode = $this->request->getPost("episode", "int");
-        $episode->idCharacters = $this->request->getPost("id_characters", "int");
-        $episode->url = $this->request->getPost("url", "int");
-        $episode->created = $this->request->getPost("created", "int");
+        $episode->setname($this->request->getPost("name", "string"));
+        $episode->setairDate($this->request->getPost("air_date", "string"));
+        $episode->setepisode($this->request->getPost("episode", "string"));
+        $episode->setidCharacters($this->request->getPost("id_characters", "int"));
+        $episode->seturl($this->request->getPost("url", "string"));
+        $episode->setcreated($this->request->getPost("created", "string"));
         
 
         if (!$episode->save()) {
@@ -162,12 +162,12 @@ class EpisodesController extends ControllerBase
             return;
         }
 
-        $episode->name = $this->request->getPost("name", "int");
-        $episode->airDate = $this->request->getPost("air_date", "int");
-        $episode->episode = $this->request->getPost("episode", "int");
-        $episode->idCharacters = $this->request->getPost("id_characters", "int");
-        $episode->url = $this->request->getPost("url", "int");
-        $episode->created = $this->request->getPost("created", "int");
+        $episode->setname($this->request->getPost("name", "int"));
+        $episode->setairDate($this->request->getPost("air_date", "int"));
+        $episode->setepisode($this->request->getPost("episode", "int"));
+        $episode->setidCharacters($this->request->getPost("id_characters", "int"));
+        $episode->seturl($this->request->getPost("url", "int"));
+        $episode->setcreated($this->request->getPost("created", "int"));
         
 
         if (!$episode->save()) {
@@ -179,7 +179,7 @@ class EpisodesController extends ControllerBase
             $this->dispatcher->forward([
                 'controller' => "episodes",
                 'action' => 'edit',
-                'params' => [$episode->id]
+                'params' => [$episode->getId()]
             ]);
 
             return;

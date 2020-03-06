@@ -11,7 +11,7 @@
 
 <?php echo $this->getContent() ?>
 
-<form action="characters/search" class="form-horizontal" method="get">
+<form action="<?php echo $this->url->getBaseUri().'characters/search';?>" class="form-horizontal" method="get">
     <div class="form-group">
     <label for="fieldId" class="col-sm-2 control-label">Id</label>
     <div class="col-sm-10">
